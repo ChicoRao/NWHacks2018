@@ -5,7 +5,7 @@ Nw hacks 2018 Repository
 ------
 
 ## Members
-Piyotr Kao
-Andy Luu
-Andrew Tan
-Rico Chao
+- Piyotr Kao
+- Andy Luu
+- Andrew Tan
+- Rico Chao
