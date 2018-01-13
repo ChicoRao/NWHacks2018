@@ -1,2 +1,11 @@
 # NWHacks2018
-A repo for nwhacks
+Nw hacks 2018 Repository
+
+## Description of Project
+------
+
+## Members
+Piyotr Kao
+Andy Luu
+Andrew Tan
+Rico Chao
