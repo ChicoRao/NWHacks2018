@@ -1,16 +1,17 @@
 const SHA256 = require('crypto-js/sha256'); //importing crypto-js, a module
 
 class Block{
-    constructor(index, timestamp, data, previousHash = ' '){
+    constructor(index, timestamp, user, amount, previousHash = ' '){
         this.index = index;
         this.timestamp = timestamp;
-        this.data = data;
+        this.user = user;
+        this.amount = amount;
         this.previousHash = previousHash;
         this.hash = this.calculateHash();
     }
     
     calculateHash(){
-        return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
+        return SHA256(this.index + this.previousHash + this.user + this.timestamp + JSON.stringify(this.amount)).toString();
     }
 }
 
@@ -50,10 +51,14 @@ class Blockchain{
     }
 }
 
-let transaction1 = new Blockchain();
-transaction1.addBlock(new Block(1, new Date().toLocaleString(), {amount: 4}));  //Adding blocks
-transaction1.addBlock(new Block(2, new Date().toLocaleString(), {amount: 10}));
+let transaction = new Blockchain();
+transaction.addBlock(new Block(1, new Date().toLocaleString(), "Bob", 4));  //Adding blocks
+transaction.addBlock(new Block(2, new Date().toLocaleString(), "Bob", 10));
 
-console.log(JSON.stringify(transaction1, null, 4));
+console.log(JSON.stringify(transaction, null, 4));
 
+let transaction2 = new Blockchain();
+transaction2.addBlock(new Block(1, new Date().toLocaleString(), "John", 2));
+transaction2.addBlock(new Block(2, new Date().toLocaleString(), "John", 51));
 
+console.log(JSON.stringify(transaction2, null, 4));
