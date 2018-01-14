@@ -33,7 +33,7 @@ contract Voting {
   // is equivalent to casting a vote
   function voteForCandidate(bytes32 candidate) public {
     require(validCandidate(candidate));
-    votesReceived[candidate] += 1;
+    votesReceived[candidate] += 10;
   }
 
   function validCandidate(bytes32 candidate) view public returns (bool) {
