@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('testAjax', 'HomeController@test');
+
+Route::get('testReceive', 'AjaxController@receive');
+
+Route::post('testSend', 'AjaxController@send');

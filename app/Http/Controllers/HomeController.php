@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    /**
+     * Ajax Test function.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function test()
+    {
+        return view('test');
+    }
 }
