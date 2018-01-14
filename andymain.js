@@ -1,4 +1,4 @@
-const SHA256 = require("crypto-js/sha256"); //might have to install this directory
+const SHA256 = require("crypto-js/sha256"); //installed directory
 
 class Block {
     constructor(index, timestamp, data, previousHash = '') {
@@ -6,11 +6,12 @@ class Block {
         this.previousHash = previousHash;
         this.timestamp = timestamp;
         this.data = data;
-        this.hash = this.calculateHash();
+        this.hash = this.calculateHash(); //important
         this.nonce = 0;
     }
 
     //function calcs hash function of a block (above) in order to identify the block on the chain
+    //pass a bunch of parameters and output a string
     calculateHash() {
         return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
     }
@@ -25,8 +26,9 @@ class Block {
     }
 }
 
-
+//make actually 'block chain'
 class Blockchain{
+    //starts blockchain 
     constructor() {
         this.chain = [this.createGenesisBlock()];
         this.difficulty = 5;
